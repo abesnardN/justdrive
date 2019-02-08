@@ -14,9 +14,19 @@ class DemandeController extends AbstractController
     public function list()
     {
 
+      // PHP 7+ code
+     $une = new class{
+    public $date = '15/12/2018 9:00';
+    public $depart = 'Nantes';
+    public $arriver = 'Rennes';
+    public $vehicule = 'Renauld';
 
+  };
+
+
+      $demandes = [$une,$une];
         return $this->render('mesDemandes.html.twig', [
-            'posts' => 'io',
+            'demandes' => $demandes,
         ]);
     }
 }
