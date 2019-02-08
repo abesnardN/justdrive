@@ -4,3 +4,6 @@
 #index:
 #    path: /
 #    defaults: { _controller: 'App\Controller\DefaultController::index' }
+mesDemandes:
+    path:      /mesDemandes/
+    controller: App\Controller\DemandeController::list
