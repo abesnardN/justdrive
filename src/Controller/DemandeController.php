@@ -18,7 +18,7 @@ class DemandeController extends AbstractController
      $une = new class{
     public $date = '15/12/2018 9:00';
     public $depart = 'Nantes';
-    public $arriver = 'Rennes';
+    public $arrive = 'Rennes';
     public $vehicule = 'Renauld';
 
   };

@@ -6,17 +6,34 @@
 
 
 {% block body %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <h1>Mes demandes</h1>
-Notre plateforme est un peu vide pour le moment, mais cela viendra !
+
 
 {% for uneDemande in demandes %}
 
- <li>
-      {{uneDemande.date}}
-      {{uneDemande.vehicule}}
+<div class="card">
+  <div class="card-header">
+    {{uneDemande.date}}
+  </div>
+  <div class="card-body">
+    <div class="float-left">
+      <p>{{uneDemande.depart}}</p>
+      <p>{{uneDemande.arrive}}</p>
+    </div>
+    <div class="float-right">
+    <button class="btn btn-primary"onclick="affiche()">Plus de détails</button>
+
+    </div>
+    <div class="hidden">
+    <p>{{uneDemande.vehicule}}</p>
+    <button class="btn btn-primary" onclick="masque()">Masquer</button>
+
+    </div>
+  </div>
+</div>
 
 
- </li>
 
 {% endfor %}
 
