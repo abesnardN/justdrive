@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trajet{% endblock %}
+
+{% block body %}
+    <h1>Trajet</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idtrajet</th>
+                <td>{{ trajet.idtrajet }}</td>
+            </tr>
+            <tr>
+                <th>Fkuser</th>
+                <td>{{ trajet.fkuser }}</td>
+            </tr>
+            <tr>
+                <th>Adressedepart</th>
+                <td>{{ trajet.adressedepart }}</td>
+            </tr>
+            <tr>
+                <th>Addressearrive</th>
+                <td>{{ trajet.addressearrive }}</td>
+            </tr>
+            <tr>
+                <th>Fkvehicule</th>
+                <td>{{ trajet.fkvehicule }}</td>
+            </tr>
+            <tr>
+                <th>Datedepart</th>
+                <td>{{ trajet.datedepart ? trajet.datedepart|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Datearrive</th>
+                <td>{{ trajet.datearrive ? trajet.datearrive|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Kilometrage</th>
+                <td>{{ trajet.kilometrage }}</td>
+            </tr>
+            <tr>
+                <th>Commentaireconducteur</th>
+                <td>{{ trajet.commentaireconducteur }}</td>
+            </tr>
+            <tr>
+                <th>Commentaireinterne</th>
+                <td>{{ trajet.commentaireinterne }}</td>
+            </tr>
+            <tr>
+                <th>Pointrdvdepart</th>
+                <td>{{ trajet.pointrdvdepart }}</td>
+            </tr>
+            <tr>
+                <th>Pointrdvarrive</th>
+                <td>{{ trajet.pointrdvarrive }}</td>
+            </tr>
+            <tr>
+                <th>Fketat</th>
+                <td>{{ trajet.fketat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('trajet_index') }}">back to list</a>
+
+    <a href="{{ path('trajet_edit', {'idtrajet': trajet.idtrajet}) }}">edit</a>
+
+    {{ include('trajet/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Occupant index{% endblock %}
+
+{% block body %}
+    <h1>Occupant index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Fktrajet</th>
+                <th>Fkuser</th>
+                <th>Fketat</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for occupant in occupants %}
+            <tr>
+                <td>{{ occupant.fktrajet }}</td>
+                <td>{{ occupant.fkuser }}</td>
+                <td>{{ occupant.fketat }}</td>
+                <td>
+                    <a href="{{ path('occupant_show', {'fktrajet': occupant.fktrajet}) }}">show</a>
+                    <a href="{{ path('occupant_edit', {'fktrajet': occupant.fktrajet}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('occupant_new') }}">Create new</a>
+{% endblock %}

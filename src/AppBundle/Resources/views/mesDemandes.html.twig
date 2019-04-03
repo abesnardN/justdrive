@@ -1,0 +1,40 @@
+
+{% extends "base.html.twig" %}
+
+
+{% block title %}Mes demandes{% endblock %}
+
+
+{% block body %}
+    <h1>Mes demandes</h1>
+
+
+{% for uneDemande in demandes %}
+
+<div class="card">
+  <div class="card-header">
+    {{uneDemande.date}}
+  </div>
+  <div class="card-body">
+    <div class="float-left">
+      <p>{{uneDemande.depart}}</p>
+      <p>{{uneDemande.arrive}}</p>
+    </div>
+    <div class="float-right">
+    <button class="btn btn-primary"onclick="affiche()">Plus de détails</button>
+
+    </div>
+    <div class="hidden">
+    <p>{{uneDemande.vehicule}}</p>
+    <button class="btn btn-primary" onclick="masque()">Masquer</button>
+
+    </div>
+  </div>
+</div>
+
+
+
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Etatvehicule{% endblock %}
+
+{% block body %}
+    <h1>Etatvehicule</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idetat</th>
+                <td>{{ etatvehicule.idetat }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ etatvehicule.libelle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('etatvehicule_index') }}">back to list</a>
+
+    <a href="{{ path('etatvehicule_edit', {'idetat': etatvehicule.idetat}) }}">edit</a>
+
+    {{ include('etatvehicule/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Occupant{% endblock %}
+
+{% block body %}
+    <h1>Occupant</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Fktrajet</th>
+                <td>{{ occupant.fktrajet }}</td>
+            </tr>
+            <tr>
+                <th>Fkuser</th>
+                <td>{{ occupant.fkuser }}</td>
+            </tr>
+            <tr>
+                <th>Fketat</th>
+                <td>{{ occupant.fketat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('occupant_index') }}">back to list</a>
+
+    <a href="{{ path('occupant_edit', {'fktrajet': occupant.fktrajet}) }}">edit</a>
+
+    {{ include('occupant/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trajet index{% endblock %}
+
+{% block body %}
+    <h1>Trajet index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Idtrajet</th>
+                <th>Fkuser</th>
+                <th>Adressedepart</th>
+                <th>Addressearrive</th>
+                <th>Fkvehicule</th>
+                <th>Datedepart</th>
+                <th>Datearrive</th>
+                <th>Kilometrage</th>
+                <th>Commentaireconducteur</th>
+                <th>Commentaireinterne</th>
+                <th>Pointrdvdepart</th>
+                <th>Pointrdvarrive</th>
+                <th>Fketat</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for trajet in trajets %}
+            <tr>
+                <td>{{ trajet.idtrajet }}</td>
+                <td>{{ trajet.fkuser }}</td>
+                <td>{{ trajet.adressedepart }}</td>
+                <td>{{ trajet.addressearrive }}</td>
+                <td>{{ trajet.fkvehicule }}</td>
+                <td>{{ trajet.datedepart ? trajet.datedepart|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ trajet.datearrive ? trajet.datearrive|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ trajet.kilometrage }}</td>
+                <td>{{ trajet.commentaireconducteur }}</td>
+                <td>{{ trajet.commentaireinterne }}</td>
+                <td>{{ trajet.pointrdvdepart }}</td>
+                <td>{{ trajet.pointrdvarrive }}</td>
+                <td>{{ trajet.fketat }}</td>
+                <td>
+                    <a href="{{ path('trajet_show', {'idtrajet': trajet.idtrajet}) }}">show</a>
+                    <a href="{{ path('trajet_edit', {'idtrajet': trajet.idtrajet}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('trajet_new') }}">Create new</a>
+{% endblock %}
