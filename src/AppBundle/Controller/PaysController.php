@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundleBundle\Controller;
+namespace AppBundle\Controller;
 
-use AppBundleBundle\Entity\Pays;
-use AppBundleBundle\Form\PaysType;
+use AppBundle\Entity\Pays;
+use AppBundle\Form\PaysType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
