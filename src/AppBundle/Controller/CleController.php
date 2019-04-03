@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controller;
+namespace AppBundle\Controller;
 
-use App\Entity\Cle;
-use App\Form\CleType;
+use AppBundle\Entity\Cle;
+use AppBundle\Form\CleType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controller;
+namespace AppBundle\Controller;
 
-use App\Entity\Occupant;
-use App\Form\OccupantType;
+use AppBundle\Entity\Occupant;
+use AppBundle\Form\OccupantType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

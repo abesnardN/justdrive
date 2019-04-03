@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controller;
+namespace AppBundle\Controller;
 
-use App\Entity\Trajet;
-use App\Form\TrajetType;
+use AppBundle\Entity\Trajet;
+use AppBundle\Form\TrajetType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

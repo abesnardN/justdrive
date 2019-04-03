@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Form;
+namespace AppBundle\Form;
 
-use App\Entity\Etatvehicule;
+use AppBundle\Entity\Etatvehicule;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;

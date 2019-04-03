@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controller;
+namespace AppBundle\Controller;
 
-use App\Entity\Vehicule;
-use App\Form\VehiculeType;
+use AppBundle\Entity\Vehicule;
+use AppBundle\Form\VehiculeType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

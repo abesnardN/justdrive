@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controller;
+namespace AppBundle\Controller;
 
-use App\Entity\Adresse;
-use App\Form\AdresseType;
+use AppBundle\Entity\Adresse;
+use AppBundle\Form\AdresseType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
