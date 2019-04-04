@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Post;
+use AppBundle\Entity\Trajet;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -13,7 +13,11 @@ class DemandeController extends AbstractController
      */
     public function list()
     {
-
+      $demandes = $this->getDoctrine()
+          ->getRepository(Trajet::class)
+          ->findAll();
+dump($demandes);
+die();
       // PHP 7+ code
      $une = new class{
     public $date = '15/12/2018 9:00';

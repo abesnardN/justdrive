@@ -70,6 +70,13 @@ class User
      */
     private $numtel;
 
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="password", type="string", length=32, nullable=true)
+     */
+    private $password;
+
     public function getIduser(): ?int
     {
         return $this->iduser;
@@ -158,6 +165,23 @@ class User
 
         return $this;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param string|null $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
 
 
 }
