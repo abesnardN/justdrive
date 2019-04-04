@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DemandeController extends AbstractController
 {
     /**
-     * @Route("/mesDemandes", name="homepage")
+     * @Route("/mesDemandes")
      */
     public function list()
     {
@@ -25,9 +25,11 @@ class DemandeController extends AbstractController
 
 
       $demandes = [$une,$une];
-        return $this->render('mesDemandes.html.twig', [
+        return $this->render('@App\mesDemandes.html.twig', [
             'demandes' => $demandes,
         ]);
+
+
     }
 
 
