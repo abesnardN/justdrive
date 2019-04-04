@@ -23,7 +23,7 @@ class UserController extends Controller
             ->getRepository(User::class)
             ->findAll();
 
-        return $this->render('user/index.html.twig', [
+        return $this->render('@App\user/index.html.twig', [
             'users' => $users,
         ]);
     }
@@ -45,7 +45,7 @@ class UserController extends Controller
             return $this->redirectToRoute('user_index');
         }
 
-        return $this->render('user/new.html.twig', [
+        return $this->render('@App\user/new.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);
@@ -56,7 +56,7 @@ class UserController extends Controller
      */
     public function show(User $user): Response
     {
-        return $this->render('user/show.html.twig', [
+        return $this->render('@App\user/show.html.twig', [
             'user' => $user,
         ]);
     }
