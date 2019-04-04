@@ -15,7 +15,6 @@
                 <th>Nbplace</th>
                 <th>Immatriculation</th>
                 <th>Datepremierecirculation</th>
-                <th>Fketat</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -29,7 +28,6 @@
                 <td>{{ vehicule.nbplace }}</td>
                 <td>{{ vehicule.immatriculation }}</td>
                 <td>{{ vehicule.datepremierecirculation ? vehicule.datepremierecirculation|date('Y-m-d') : '' }}</td>
-                <td>{{ vehicule.fketat }}</td>
                 <td>
                     <a href="{{ path('vehicule_show', {'idvehicule': vehicule.idvehicule}) }}">show</a>
                     <a href="{{ path('vehicule_edit', {'idvehicule': vehicule.idvehicule}) }}">edit</a>
