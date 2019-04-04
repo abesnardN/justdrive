@@ -12,7 +12,8 @@ CREATE TABLE User(
 	urlPermis VARCHAR(50),
 	dateInscription DATETIME NOT NULL,
 	mail VARCHAR(50),
-	numTel VARCHAR(13)
+	numTel VARCHAR(13),
+	password VARCHAR(32)
 );
 
 CREATE TABLE Pays(
