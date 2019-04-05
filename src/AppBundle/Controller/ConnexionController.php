@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ConnexionController extends Controller
 {
     /**
-     * @Route("/", name="adresse_index", methods={"GET"})
+     * @Route("/", name="connexion_index", methods={"GET"})
      */
     public function connectAction(Request $request): Response
     {

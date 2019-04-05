@@ -5,11 +5,13 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Trajet;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-
+/**
+ * @Route("/mesDemandes")
+ */
 class DemandeController extends AbstractController
 {
     /**
-     * @Route("/mesDemandes")
+     * @Route("/", name="demande_index", methods={"GET"})
      */
     public function list()
     {
