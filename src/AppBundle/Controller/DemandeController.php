@@ -16,8 +16,8 @@ class DemandeController extends AbstractController
       $demandes = $this->getDoctrine()
           ->getRepository(Trajet::class)
           ->findAll();
-dump($demandes);
-die();
+// dump($demandes);
+// die();
       // PHP 7+ code
      $une = new class{
     public $date = '15/12/2018 9:00';
