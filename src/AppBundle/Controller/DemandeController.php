@@ -40,7 +40,7 @@ class DemandeController extends AbstractController
 
 
 /**
- * @Route("/valideDemande/{id}", name="homepage")
+ * @Route("/valideDemande/{id}")
  */
 public function valid($id)
 {
