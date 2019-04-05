@@ -23,7 +23,7 @@ class VehiculeController extends Controller
             ->getRepository(Vehicule::class)
             ->findAll();
 
-        return $this->render('vehicule/index.html.twig', [
+        return $this->render('@App\vehicule/index.html.twig', [
             'vehicules' => $vehicules,
         ]);
     }
@@ -45,7 +45,7 @@ class VehiculeController extends Controller
             return $this->redirectToRoute('vehicule_index');
         }
 
-        return $this->render('vehicule/new.html.twig', [
+        return $this->render('@App\vehicule/new.html.twig', [
             'vehicule' => $vehicule,
             'form' => $form->createView(),
         ]);
@@ -56,7 +56,7 @@ class VehiculeController extends Controller
      */
     public function show(Vehicule $vehicule): Response
     {
-        return $this->render('vehicule/show.html.twig', [
+        return $this->render('@App\vehicule/show.html.twig', [
             'vehicule' => $vehicule,
         ]);
     }
@@ -77,7 +77,7 @@ class VehiculeController extends Controller
             ]);
         }
 
-        return $this->render('vehicule/edit.html.twig', [
+        return $this->render('@App\vehicule/edit.html.twig', [
             'vehicule' => $vehicule,
             'form' => $form->createView(),
         ]);
@@ -94,6 +94,6 @@ class VehiculeController extends Controller
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('vehicule_index');
+        return $this->redirectToRoute('@App\vehicule_index');
     }
 }
