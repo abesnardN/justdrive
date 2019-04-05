@@ -22,8 +22,8 @@ class Trajet
     private $idtrajet;
 
     /**
-     * @var int|null
-     *
+     * @var User|null
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="trajets")
      * @ORM\Column(name="fkUser", type="integer", nullable=true)
      */
     private $fkuser;
@@ -110,48 +110,48 @@ class Trajet
         return $this->idtrajet;
     }
 
-    public function getFkuser(): ?int
+    public function getFkuser(): ?User
     {
         return $this->fkuser;
     }
 
-    public function setFkuser(?int $fkuser): self
+    public function setFkuser(?User $fkuser): self
     {
         $this->fkuser = $fkuser;
 
         return $this;
     }
 
-    public function getAdressedepart(): ?int
+    public function getAdressedepart(): ?Adresse
     {
         return $this->adressedepart;
     }
 
-    public function setAdressedepart(?int $adressedepart): self
+    public function setAdressedepart(?Adresse $adressedepart): self
     {
         $this->adressedepart = $adressedepart;
 
         return $this;
     }
 
-    public function getAddressearrive(): ?int
+    public function getAddressearrive(): ?Adresse
     {
         return $this->addressearrive;
     }
 
-    public function setAddressearrive(?int $addressearrive): self
+    public function setAddressearrive(?Adresse $addressearrive): self
     {
         $this->addressearrive = $addressearrive;
 
         return $this;
     }
 
-    public function getFkvehicule(): ?int
+    public function getFkvehicule(): ?Vehicule
     {
         return $this->fkvehicule;
     }
 
-    public function setFkvehicule(?int $fkvehicule): self
+    public function setFkvehicule(?Vehicule $fkvehicule): self
     {
         $this->fkvehicule = $fkvehicule;
 
@@ -218,36 +218,36 @@ class Trajet
         return $this;
     }
 
-    public function getPointrdvdepart(): ?int
+    public function getPointrdvdepart(): ?Adresse
     {
         return $this->pointrdvdepart;
     }
 
-    public function setPointrdvdepart(?int $pointrdvdepart): self
+    public function setPointrdvdepart(?Adresse $pointrdvdepart): self
     {
         $this->pointrdvdepart = $pointrdvdepart;
 
         return $this;
     }
 
-    public function getPointrdvarrive(): ?int
+    public function getPointrdvarrive(): ?Adresse
     {
         return $this->pointrdvarrive;
     }
 
-    public function setPointrdvarrive(?int $pointrdvarrive): self
+    public function setPointrdvarrive(?Adresse $pointrdvarrive): self
     {
         $this->pointrdvarrive = $pointrdvarrive;
 
         return $this;
     }
 
-    public function getFketat(): ?int
+    public function getFketat(): ?Etatvehicule
     {
         return $this->fketat;
     }
 
-    public function setFketat(?int $fketat): self
+    public function setFketat(?Etatvehicule $fketat): self
     {
         $this->fketat = $fketat;
 

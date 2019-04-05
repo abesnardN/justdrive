@@ -34,18 +34,24 @@ class TrajetController extends Controller
     public function new(Request $request): Response
     {
         $trajet = new Trajet();
-        $form = $this->createForm(TrajetType::class, $trajet);
+        $form = $this->createForm(TrajetType::class, $trajet, ['action' => $this->generateUrl('trajet_new')]);
+
+
         $form->handleRequest($request);
 
+        // var_dump($form->isSubmitted());
+        // var_dump($form->isValid());
         if ($form->isSubmitted() && $form->isValid()) {
+
             $entityManager = $this->getDoctrine()->getManager();
+
             $entityManager->persist($trajet);
             $entityManager->flush();
 
             return $this->redirectToRoute('trajet_index');
         }
 
-        return $this->render('trajet/new.html.twig', [
+        return $this->render('@App\trajet/new.html.twig', [
             'trajet' => $trajet,
             'form' => $form->createView(),
         ]);
