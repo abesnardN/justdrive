@@ -4,6 +4,10 @@ security:
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
+        users:
+            entity:
+                class: '@AppBundle\Entity\User'
+                property: 'mail'
         in_memory:
             memory: ~
 
@@ -21,4 +25,9 @@ security:
             #http_basic: ~
 
             # https://symfony.com/doc/current/security/form_login_setup.html
-            #form_login: ~
+            form_login:
+                login_path: connexion
+                check_path: connexion
+    access_control:
+        - { path: ^/connexion, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: ROLE_ADMIN }
