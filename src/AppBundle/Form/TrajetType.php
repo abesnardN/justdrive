@@ -25,6 +25,7 @@ class TrajetType extends AbstractType
                 // uses the User.username property as the visible option string
                 'choice_label' => 'nom',
                 'label'=>'Utilisateur',
+                'attr' => ['class' => 'form-control']
             ])
 
             ->add('adressedepart', EntityType::class, [
@@ -35,6 +36,7 @@ class TrajetType extends AbstractType
                     return $adresse->getNumrue() .' '.$adresse->getNomrue() . ' ' . $adresse->getVille().' '.$adresse->getfkPays();
                 },
                 'label'=>'Adresse de départ',
+                'attr' => ['class' => 'form-control']
             ])
             ->add('addressearrive', EntityType::class, [
                 // looks for choices from this entity
@@ -44,6 +46,7 @@ class TrajetType extends AbstractType
                     return $adresse->getNumrue() .' '.$adresse->getNomrue() . ' ' . $adresse->getVille().' '.$adresse->getfkPays();
                 },
                 'label'=>'Adresse d\'arrivé',
+                'attr' => ['class' => 'form-control']
             ])
             ->add('fkvehicule', EntityType::class, [
                 // looks for choices from this entity
@@ -51,10 +54,11 @@ class TrajetType extends AbstractType
                 // uses the User.username property as the visible option string
                 'choice_label' => 'modele',
                 'label'=>'Véhicule',
+                'attr' => ['class' => 'form-control']
             ])
             ->add('datedepart')
             ->add('datearrive')
-            ->add('kilometrage')
+            ->add('kilometrage',TextType::class,['attr' => ['class' => 'form-control']])
             ->add('commentaireconducteur',TextareaType::class, ['required'   => false])
             ->add('commentaireinterne',TextareaType::class, ['required'   => false])
 
@@ -66,6 +70,7 @@ class TrajetType extends AbstractType
                     return $adresse->getNumrue() .' '.$adresse->getNomrue() . ' ' . $adresse->getVille().' '.$adresse->getfkPays();
                 },
                 'label'=>'point RDV départ',
+                'attr' => ['class' => 'form-control']
             ])
             ->add('pointrdvarrive', EntityType::class, [
                 // looks for choices from this entity
@@ -75,6 +80,7 @@ class TrajetType extends AbstractType
                     return $adresse->getNumrue() .' '.$adresse->getNomrue() . ' ' . $adresse->getVille().' '.$adresse->getfkPays();
                 },
                 'label'=>'point RDV arrivé',
+                'attr' => ['class' => 'form-control']
             ])
             ->add('fketat', EntityType::class, [
                 // looks for choices from this entity
@@ -82,6 +88,7 @@ class TrajetType extends AbstractType
                 // uses the User.username property as the visible option string
                 'choice_label' => 'libelle',
                 'label'=>'Etat du véhicule',
+                'attr' => ['class' => 'form-control']
             ])
         ;
     }
