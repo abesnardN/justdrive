@@ -82,7 +82,7 @@ class User
     *
     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Trajet", mappedBy="fkuser")
     */
-    private $trajets
+    private $trajets;
 
     public function getIduser(): ?int
     {
