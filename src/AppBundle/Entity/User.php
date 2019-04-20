@@ -77,6 +77,13 @@ class User
      */
     private $password;
 
+    /**
+    *
+    *
+    * @ORM\OneToMany(targetEntity="AppBundle\Entity\Trajet", mappedBy="fkuser")
+    */
+    private $trajets
+
     public function getIduser(): ?int
     {
         return $this->iduser;

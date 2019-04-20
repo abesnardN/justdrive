@@ -13,6 +13,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Doctrine\ORM\EntityRepository;
 
 class TrajetType extends AbstractType
 {
@@ -22,6 +23,10 @@ class TrajetType extends AbstractType
             ->add('fkuser', EntityType::class, [
                 // looks for choices from this entity
                 'class' => User::class,
+                'query_builder' => function (EntityRepository $er) {
+                  return $er->createQueryBuilder('u');
+
+                    },
                 // uses the User.username property as the visible option string
                 'choice_label' => 'nom',
                 'label'=>'Utilisateur',

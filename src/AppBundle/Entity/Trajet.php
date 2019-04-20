@@ -23,7 +23,7 @@ class Trajet
 
     /**
      * @var User|null
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="trajets")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="trajets")
      * @ORM\Column(name="fkUser", type="integer", nullable=true)
      */
     private $fkuser;
@@ -36,14 +36,14 @@ class Trajet
     private $adressedepart;
 
     /**
-     * @var int|null
+     * @var Adresse|null
      *
      * @ORM\Column(name="addresseArrive", type="integer", nullable=true)
      */
     private $addressearrive;
 
     /**
-     * @var int|null
+     * @var Adresse|null
      *
      * @ORM\Column(name="fkVehicule", type="integer", nullable=true)
      */
