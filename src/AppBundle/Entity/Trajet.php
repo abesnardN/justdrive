@@ -24,7 +24,7 @@ class Trajet
     /**
      * @var User|null
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="trajets")
-     * @ORM\Column(name="fkUser", type="integer", nullable=true)
+     * @ORM\JoinColumn(name="fkUser", referencedColumnName="idUser", nullable=true)
      */
     private $fkuser;
 

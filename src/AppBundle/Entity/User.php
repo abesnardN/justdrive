@@ -2,6 +2,8 @@
 
 namespace AppBundle\Entity;
 
+use Symfony\Component\Security\Core\Role\Role;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user")
  * @ORM\Entity
  */
-class User
+class User implements UserInterface
 {
     /**
      * @var int
@@ -78,11 +80,18 @@ class User
     private $password;
 
     /**
-    *
-    *
-    * @ORM\OneToMany(targetEntity="AppBundle\Entity\Trajet", mappedBy="fkuser")
-    */
+     *
+     *
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Trajet", mappedBy="fkuser")
+     */
     private $trajets;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="admin", type="smallint", length=4, nullable=true, )
+     */
+    private $admin = 0;
 
     public function getIduser(): ?int
     {
@@ -189,6 +198,61 @@ class User
         $this->password = $password;
     }
 
+    /**
+     * @return string|null
+     */
+    public function getAdmin(): ?string
+    {
+        return $this->admin;
+    }
+
+    /**
+     * @param integer|null $admin
+     */
+    public function setAdmin(?int $admin): void
+    {
+        $this->admin = $admin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTrajets()
+    {
+        return $this->trajets;
+    }
+
+    /**
+     * @param mixed $trajets
+     */
+    public function setTrajets($trajets): void
+    {
+        $this->trajets = $trajets;
+    }
 
 
+
+    public function getRoles()
+    {
+        $role = array('ROLE_USER');
+        if($this->getAdmin() === 1) {
+            $role = array('ROLE_ADMIN');
+        }
+        return $role;
+    }
+
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
+    public function getSalt()
+    {
+        return '';
+    }
+
+    public function getUsername()
+    {
+        return $this->getMail();
+    }
 }

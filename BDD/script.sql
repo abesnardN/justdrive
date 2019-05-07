@@ -13,7 +13,8 @@ CREATE TABLE User(
 	dateInscription DATETIME NOT NULL,
 	mail VARCHAR(50),
 	numTel VARCHAR(13),
-	password VARCHAR(32)
+	password VARCHAR(32),
+	admin TINYINT DEFAULT 0
 );
 
 CREATE TABLE Pays(
