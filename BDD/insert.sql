@@ -11,3 +11,6 @@ INSERT INTO adresse(idAdresse,numRue,nomRue,ville,codePostal,fkPays,latitude,lon
     VALUES('3','','rue de la mairie','Pouzauges','85400','FR','1.65','68')
   INSERT INTO adresse(idAdresse,numRue,nomRue,ville,codePostal,fkPays,latitude,longitude)
     VALUES('4','','rue de la mairie','Bressuire','79300','FR','1.69','4')
+
+
+INSERT INTO user(mail, password, dateInscription) VALUES ('mail@mail.fr','aaa',CURDATE())
