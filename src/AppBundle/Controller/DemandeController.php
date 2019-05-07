@@ -18,8 +18,8 @@ class DemandeController extends AbstractController
       $demandes = $this->getDoctrine()
           ->getRepository(Trajet::class)
           ->findAll();
- dump($demandes);
- die();
+ // dump($demandes);
+ // die();
         return $this->render('@App\mesDemandes.html.twig', [
             'demandes' => $demandes,
         ]);

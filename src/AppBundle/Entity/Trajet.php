@@ -24,14 +24,14 @@ class Trajet
     /**
      * @var User|null
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="trajets", cascade="persist")
-     * @ORM\JoinColumn(name="fkUser", referencedColumnName="idUser") 
+     * @ORM\JoinColumn(name="fkUser", referencedColumnName="idUser")
      */
     private $fkuser;
 
     /**
      * @var int|null
-     *
-     * @ORM\Column(name="adresseDepart", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Adresse", cascade="persist")
+     * @ORM\JoinColumn(name="adresseDepart", referencedColumnName="idAdresse")
      */
     private $adressedepart;
 
