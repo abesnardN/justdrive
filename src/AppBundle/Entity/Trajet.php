@@ -23,8 +23,8 @@ class Trajet
 
     /**
      * @var User|null
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="trajets")
-     * @ORM\JoinColumn(name="fkUser", referencedColumnName="idUser", nullable=true)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="trajets", cascade="persist")
+     * @ORM\JoinColumn(name="fkUser", referencedColumnName="idUser") 
      */
     private $fkuser;
 

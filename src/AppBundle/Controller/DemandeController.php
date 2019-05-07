@@ -20,17 +20,6 @@ class DemandeController extends AbstractController
           ->findAll();
  dump($demandes);
  die();
-      // PHP 7+ code
-     $une = new class{
-    public $date = '15/12/2018 9:00';
-    public $depart = 'Nantes';
-    public $arrive = 'Rennes';
-    public $vehicule = 'Renauld';
-
-  };
-
-
-      $demandes = [$une,$une];
         return $this->render('@App\mesDemandes.html.twig', [
             'demandes' => $demandes,
         ]);
