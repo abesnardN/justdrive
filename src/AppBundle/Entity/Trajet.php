@@ -29,9 +29,9 @@ class Trajet
     private $fkuser;
 
     /**
-     * @var int|null
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Adresse", cascade="persist")
-     * @ORM\JoinColumn(name="adresseDepart", referencedColumnName="idAdresse")
+     * @var Adresse|null
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Adresse", inversedBy="trajetsA", cascade="persist")
+     * @ORM\JoinColumn(name="adresseDepart", referencedColumnName="idadresse")
      */
     private $adressedepart;
 
@@ -43,9 +43,9 @@ class Trajet
     private $addressearrive;
 
     /**
-     * @var Adresse|null
-     *
-     * @ORM\Column(name="fkVehicule", type="integer", nullable=true)
+     * @var Vehicule|null
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Vehicule", inversedBy="trajets", cascade="persist")
+     * @ORM\JoinColumn(name="fkVehicule", referencedColumnName="idVehicule")
      */
     private $fkvehicule;
 

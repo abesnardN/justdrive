@@ -70,6 +70,15 @@ class Vehicule
      */
     private $fketat;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Trajet", mappedBy="fkvehicule")
+     */
+    private $trajets;
+
+    public function __construct()
+    {
+        $this->trajets = new ArrayCollection();
+    }
     public function getIdvehicule(): ?int
     {
         return $this->idvehicule;
@@ -159,5 +168,19 @@ class Vehicule
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getTrajets()
+    {
+        return $this->trajets;
+    }
 
+    /**
+     * @param mixed $trajets
+     */
+    public function setTrajets($trajets): void
+    {
+        $this->trajets = $trajets;
+    }
 }

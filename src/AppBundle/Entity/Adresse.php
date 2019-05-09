@@ -15,7 +15,7 @@ class Adresse
     /**
      * @var int
      *
-     * @ORM\Column(name="idAdresse", type="integer", nullable=false)
+     * @ORM\Column(name="idadresse", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -69,6 +69,11 @@ class Adresse
      * @ORM\Column(name="longitude", type="decimal", precision=10, scale=0, nullable=true)
      */
     private $longitude;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Trajet", mappedBy="adressedepart")
+     */
+    private $trajetsA;
 
     public function getIdadresse(): ?int
     {
