@@ -1,6 +1,7 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
-
+logout:
+    path: /logout
 toiba_fullcalendar:
     resource: "@FullCalendarBundle/Resources/config/routing.yaml"

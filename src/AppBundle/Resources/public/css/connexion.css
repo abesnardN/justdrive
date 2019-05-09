@@ -1,0 +1,35 @@
+#logo {
+    width: 30%;
+}
+
+#formConnexion {
+    margin-top: 5%;
+}
+
+input[type="text"], input[type="password"] {
+    width: 90%;
+    margin-left: 5%;
+}
+
+input[type="password"] {
+    margin-bottom: 1%;
+}
+
+button[type="submit"] {
+    margin-top: 1%;
+}
+
+@media screen and (max-width: 800px) {
+    #logo {
+        width: 39%;
+        margin-top: 18%;
+    }
+
+    #formConnexion {
+        margin-top: 11%;
+    }
+
+    button[type="submit"] {
+        margin-top: 2%;
+    }
+}
