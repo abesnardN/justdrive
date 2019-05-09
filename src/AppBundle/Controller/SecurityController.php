@@ -19,6 +19,12 @@ class SecurityController extends Controller
      */
     public function loginAction(AuthenticationUtils $authenticationUtils)
     {
+        if($this->isGranted('ROLE_USER') == true) {
+            return $this->redirectToRoute('demande_index');
+        } else if ($this->isGranted('ROLE_ADMIN')) {
+            return $this->redirectToRoute('vehicule_index');
+        }
+
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
 
