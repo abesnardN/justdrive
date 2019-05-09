@@ -11,27 +11,19 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Doctrine\ORM\EntityRepository;
+Use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
 class TrajetType extends AbstractType
 {
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('fkuser', EntityType::class, [
-                // looks for choices from this entity
-                'class' => User::class,
-                'query_builder' => function (EntityRepository $er) {
-                  return $er->createQueryBuilder('u');
 
-                    },
-                // uses the User.username property as the visible option string
-                'choice_label' => 'nom',
-                'label'=>'Utilisateur',
-                'attr' => ['class' => 'form-control']
-            ])
 
             ->add('adressedepart', EntityType::class, [
                 // looks for choices from this entity

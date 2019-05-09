@@ -33,6 +33,8 @@ class TrajetController extends Controller
      */
     public function new(Request $request): Response
     {
+
+
         $trajet = new Trajet();
         $form = $this->createForm(TrajetType::class, $trajet, ['action' => $this->generateUrl('trajet_new')]);
 
@@ -44,6 +46,7 @@ class TrajetController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
             $entityManager = $this->getDoctrine()->getManager();
+            $trajet->setFkuser($this->get('security.token_storage')->getToken()->getUser());
 
             $entityManager->persist($trajet);
             $entityManager->flush();
