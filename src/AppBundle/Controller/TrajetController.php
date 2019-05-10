@@ -48,6 +48,8 @@ class TrajetController extends Controller
             $entityManager = $this->getDoctrine()->getManager();
             $trajet->setFkuser($this->get('security.token_storage')->getToken()->getUser());
 
+
+dump($trajet);
             $entityManager->persist($trajet);
             $entityManager->flush();
 

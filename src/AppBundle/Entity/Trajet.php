@@ -30,7 +30,7 @@ class Trajet
 
     /**
      * @var Adresse|null
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Adresse", inversedBy="trajetsA", cascade="persist")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Adresse", inversedBy="trajetsD", cascade="persist")
      * @ORM\JoinColumn(name="adresseDepart", referencedColumnName="idadresse")
      */
     private $adressedepart;
@@ -38,9 +38,10 @@ class Trajet
     /**
      * @var Adresse|null
      *
-     * @ORM\Column(name="addresseArrive", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Adresse", inversedBy="trajetsA", cascade="persist")
+     * @ORM\JoinColumn(name="addresseArrive", referencedColumnName="idadresse")
      */
-    private $addressearrive;
+    private $adressearrive;
 
     /**
      * @var Vehicule|null
@@ -134,14 +135,14 @@ class Trajet
         return $this;
     }
 
-    public function getAddressearrive(): ?Adresse
+    public function getAdressearrive(): ?Adresse
     {
-        return $this->addressearrive;
+        return $this->adressearrive;
     }
 
-    public function setAddressearrive(?Adresse $addressearrive): self
+    public function setAdressearrive(?Adresse $adressearrive): self
     {
-        $this->addressearrive = $addressearrive;
+        $this->adressearrive = $adressearrive;
 
         return $this;
     }

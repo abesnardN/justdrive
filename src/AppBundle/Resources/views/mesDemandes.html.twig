@@ -7,26 +7,31 @@
 {% block body %}
     <h1>Mes demandes</h1>
 
-
+<div class="row">
 {% for uneDemande in demandes %}
 
-<div class="card">
-  <div class="card-header">
-plop
-  </div>
+<div class="card col-sm">
   <div class="card-body">
-    <div class="float-left">
-      15-12-2016
-      16-02-2019
+  <div class="labeldate"><label>Aller : </label>{{uneDemande.datedepart|date("d/m")}}</div>
+  <div class="labeldate"><label>Retour : </label>{{uneDemande.datearrive|date("d/m")}}</div>
+    <div>
     </div>
-    <div class="float-right">
-    <button class="btn btn-primary"onclick="affiche()">Plus de détails</button>
-
+    <div class="row">
+      <div class="col-6">
+      <div class="ville">{{uneDemande.adressedepart.ville}}</div>
+      {{uneDemande.fkvehicule.marque}}
+      {{uneDemande.fkvehicule.modele}}
+      <div>{{uneDemande.fkvehicule.immatriculation}}</div>
+      </div>
+      <div class="col-6">
+       <div class="ville">{{uneDemande.adressearrive.ville}}</div>
+        {{uneDemande.fkuser.nom}}
+        {{uneDemande.fkuser.prenom}}
+        <div><a onclick="affiche()">Plus ...</a></div>
+      </div>
     </div>
-    <div class="hidden">
-    ford fiesta
-    <button class="btn btn-primary" onclick="masque()">Masquer</button>
-
+    <div class="d-none">
+    <a onclick="masque()">Masquer</a>
     </div>
   </div>
 </div>
@@ -34,6 +39,6 @@ plop
 
 
 {% endfor %}
-
+</div>
 
 {% endblock %}

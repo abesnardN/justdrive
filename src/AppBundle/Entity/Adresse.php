@@ -71,6 +71,10 @@ class Adresse
     private $longitude;
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Trajet", mappedBy="adressearrive")
+     */
+    private $trajetsD;
+    /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Trajet", mappedBy="adressedepart")
      */
     private $trajetsA;
