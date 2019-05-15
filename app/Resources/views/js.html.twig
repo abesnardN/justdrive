@@ -1,6 +1,12 @@
+<!-- API -->
 <script type="application/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="application/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script type="application/javascript" src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 
+<!-- Fichier général -->
+<script type="application/javascript" src="{{ asset('bundles/app/js/general.js') }}"></script>
+
+<!-- Fichier par route -->
 {% set route = app.request.attributes.get('_route') %}
-<link href="{{ asset('bundles/app/js/' ~ route ~ '.js') }}" rel="stylesheet">
+<script type="application/javascript" src="{{ asset('bundles/app/js/' ~ route ~ '.js') }}"></script>
 

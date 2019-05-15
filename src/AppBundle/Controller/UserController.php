@@ -34,7 +34,7 @@ class UserController extends Controller
     public function new(Request $request): Response
     {
         $user = new User();
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserType::class, $user, ['isCreate' => true]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -72,12 +72,12 @@ class UserController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('user_index', [
-                'iduser' => $user->getIduser(),
+            return $this->redirectToRoute('user_show', [
+                'iduser' => $user->getIduser()
             ]);
         }
 
-        return $this->render('user/edit.html.twig', [
+        return $this->render('@App/user/edit.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);
@@ -94,6 +94,6 @@ class UserController extends Controller
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('user_index');
+        return $this->redirectToRoute('logout');
     }
 }

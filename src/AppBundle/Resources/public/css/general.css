@@ -17,3 +17,20 @@
   font-weight:700;
   text-transform: uppercase;
 }
+.clearHeader{
+  padding-top: 5%;
+}
+
+.affichageMobile {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .affichageMobile {
+    display: block;
+  }
+
+  .affichagePc {
+    display: none;
+  }
+}
