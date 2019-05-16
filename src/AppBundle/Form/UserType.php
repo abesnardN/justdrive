@@ -62,7 +62,7 @@ class UserType extends AbstractType
                     'type' => 'email'
                 ]])
             ->add('numtel', TelType::class, [
-                'label' => 'Nnuméro de téléphone',
+                'label' => 'Numéro de téléphone',
                 'attr' => [
                     'class' => 'form-control',
                     'id' => 'tel',
