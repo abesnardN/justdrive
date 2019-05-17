@@ -17,7 +17,7 @@
 
 {% for uneDemande in demandes %}
 
-<div class="card col-sm">
+<div class="card col-sm-12 col-md-12 col-lg-12 col-xs-12">
   <div class="card-body">
   <div class="labeldate"><label>Aller : </label>{{uneDemande.datedepart|date("d/m")}}</div>
   <div class="labeldate"><label>Retour : </label>{{uneDemande.datearrive|date("d/m")}}</div>
