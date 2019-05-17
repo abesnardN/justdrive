@@ -1,6 +1,12 @@
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- API -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css">
+
+<!-- Fichier général -->
 <link rel="stylesheet" href="{{ asset('bundles/app/css/general.css') }}"/>
 
+<!-- Fichier par route -->
 {% set route = app.request.attributes.get('_route') %}
 <link href="{{ asset('bundles/app/css/' ~ route ~ '.css') }}" rel="stylesheet">
 

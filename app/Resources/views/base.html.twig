@@ -8,10 +8,13 @@
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body class="container">
+    <body>
         <header class="border-top-0 fixed-top rounded-top border-top align-top">
             {% include 'top_menu.html.twig' %}
         </header>
+
+        <div class="clearHeader"></div>
+
         {% block body %}{% endblock %}
         {% include 'js.html.twig' %}
         {% block javascripts %}

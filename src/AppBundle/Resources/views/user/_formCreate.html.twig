@@ -1,0 +1,58 @@
+{{ form_start(form) }}
+<div class="card">
+    <div class="card-body">
+        <h1 class="card-title">Création d'un utilisateur</h1>
+        <div class="card-columns d-flex justify-content-center">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        {{ form_row(form.nom) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.prenom) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.numtel) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.mail) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="permisOuiNon"> L'utilisateur a-t-il le permis ?</label>
+                        <input id="permisOuiNon" type="checkbox" {{ user.permis is defined and user.permis is not empty ? 'checked=""checked' : '' }}>
+                    </div>
+                    <div id="infosPermis" style="display: {{ user.permis is defined and user.permis is not empty ? 'block' : 'none' }}">
+                        <div class="form-group">
+                            {{ form_row(form.permis) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_row(form.urlpermis) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.dateinscription) }}
+                    </div>
+                    <div id="adminOuiNon">
+                        {{ form_row(form.admin) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row text-center mt-3">
+    <div class="col-sm">
+        <a class="btn btn-secondary" href="{{ path('user_show', {'iduser' : app.user.iduser}) }}">Retour</a>
+    </div>
+    <div class="col-sm">
+        {{ form_row(form.save) }}
+    </div>
+
+</div>
+{{ form_end(form) }}
