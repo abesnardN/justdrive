@@ -27,6 +27,26 @@ class TrajetController extends Controller
             'trajets' => $trajets,
         ]);
     }
+    /**
+     * @Route("/search", name="trajet_search", methods={"GET"})
+     */
+    public function search(Request $request): Response
+    {
+$demandes = [];
+
+      //si une recherche a été lancée
+      if (null !== ($_GET['date'])) {
+        //TODO
+        //on recupere les trajets correspondants et non plein
+        $demandes = $this->getDoctrine()
+            ->getRepository(Trajet::class)
+            ->findAll();
+
+
+      }
+
+        return $this->render('@App\trajet/search.html.twig',['demandes'=>$demandes]);
+    }
 
     /**
      * @Route("/new", name="trajet_new", methods={"GET","POST"})

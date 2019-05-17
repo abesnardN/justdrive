@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche{% endblock %}
+
+{% block body %}
+<div class="container">
+<form name="form">
+  <div class="form-group row">
+    <label for="inputdate" class="col-sm-2 col-form-label">Date</label>
+    <div class="col-sm-10">
+      <input type="date" name="date" class="form-control" id="inputdate">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputDepart" class="col-sm-2 col-form-label">Ville de départ</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputDepart" placeholder="Paris">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputArrive" class="col-sm-2 col-form-label">Ville d'arrivé</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputArrive" placeholder="Nantes">
+    </div>
+  </div>
+  <input type="submit" class="btn btn-info float-right" value="Chercher">
+</form>
+
+<div id="result">
+
+  {% for uneDemande in demandes %}
+  <div>
+  {{uneDemande.datedepart|date('h')}}h{{uneDemande.datedepart|date('i')}}
+  <div>Adresse de départ : {{uneDemande.adressedepart.numrue}}  {{uneDemande.adressedepart.nomrue}} {{uneDemande.adressedepart.ville}}</div>
+  <div>Adresse d'arriver : {{uneDemande.adressearrive.numrue}}  {{uneDemande.adressearrive.nomrue}} {{uneDemande.adressearrive.ville}}</div>
+  <div>Conduit par : {{uneDemande.fkuser.prenom}} {{uneDemande.fkuser.nom}}</div>
+  <div>x places restantes</div>
+    <button type="button" class="btn btn-info" name="button">M'inscrire</button>
+  </div>
+  {% endfor %}
+
+</div>
+
+<button type="button" class="btn btn-success btn-lg btn-block" name="button">Creer un nouveau trajet</button>
+</div>
+{% endblock %}
