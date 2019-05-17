@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -105,6 +106,23 @@ class Trajet
      * @ORM\Column(name="fkEtat", type="integer", nullable=true)
      */
     private $fketat;
+
+
+
+    /**
+    * @ORM\ManyToMany(targetEntity="AppBundle\Entity\User", inversedBy="trajetOccupant", cascade={"persist"})
+    * @ORM\JoinTable(name="occupant",
+    *       joinColumns={
+    *       @ORM\JoinColumn(name="fkTrajet", referencedColumnName="idTrajet")
+    *          },
+    *        inverseJoinColumns = {
+    *       @ORM\JoinColumn(name="fkUser", referencedColumnName="idUser")
+    *          }
+    *     )
+    */
+    private $occupant;
+
+
 
     public function getIdtrajet(): ?int
     {
@@ -253,6 +271,10 @@ class Trajet
         $this->fketat = $fketat;
 
         return $this;
+    }
+    public function getOccupant(): ?Collection
+    {
+        return $this->occupant;
     }
 
 

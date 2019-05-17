@@ -85,6 +85,10 @@ class User implements UserInterface
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Trajet", mappedBy="fkuser")
      */
     private $trajets;
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Trajet", mappedBy="occupant")
+    */
+    private $trajetOccupant;
 
     /**
      * @var string|null

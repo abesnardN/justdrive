@@ -41,8 +41,10 @@
    <div>
   Les occupants
   <ul>
-    <li>Michel Dupond</li>
-    <li>Michel Dupond</li>
+  {% for unOccupant in uneDemande.occupant %}
+    <li>{{unOccupant.nom}} {{unOccupant.prenom}}</li>
+  {% endfor %}
+
   </ul>
     </div>
     <a onclick="masque()">Masquer</a>
