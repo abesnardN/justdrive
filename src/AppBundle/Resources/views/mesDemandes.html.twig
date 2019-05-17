@@ -7,8 +7,14 @@
 {% block body %}
 <div class="container">
     <h1>Mes demandes</h1>
-
+    {% if demandes|length < 1 %}
+        <div class="alert alert-info" role="alert">
+          Je n'ai pas de demandes
+        </div>
+    {% endif %}
 <div class="row">
+
+
 {% for uneDemande in demandes %}
 
 <div class="card col-sm">
