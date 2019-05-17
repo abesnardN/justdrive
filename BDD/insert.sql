@@ -1,6 +1,6 @@
 insert into etatvehicule value(1,'propre');
   insert into etatvehicule value(2,'sale');
-    insert into vehicule(idVehicule, modele, kilometrage, marque, nbPlace,immatriculation,datePremiereCirculation,fkEtat)values('1','megane',100000, 'Renaut',5,'DD 153 JJ',curdate(),1)
+    insert into vehicule(idVehicule, modele, kilometrage, marque, nbPlace,immatriculation,datePremiereCirculation,fkEtat)values('1','megane',100000, 'Renaut',5,'DD 153 JJ',curdate(),1);
 INSERT INTO pays values('FR','France');
 /*Adresse*/
 INSERT INTO adresse(idAdresse,numRue,nomRue,ville,codePostal,fkPays,latitude,longitude)
@@ -13,10 +13,10 @@ INSERT INTO adresse(idAdresse,numRue,nomRue,ville,codePostal,fkPays,latitude,lon
     VALUES('4','','rue de la mairie','Bressuire','79300','FR','1.69','4');
 
     INSERT INTO vehicule(modele,kilometrage,marque,nbPlace,immatriculation,datePremiereCirculation,fkEtat)
-    VALUES('206','10000','Peugeot',4,'OU569PO',CURDATE(),1)
+    VALUES('206','10000','Peugeot',4,'OU569PO',CURDATE(),1);
 
 
-INSERT INTO user(mail, password, dateInscription) VALUES ('mail@mail.fr','aaa',CURDATE())
+INSERT INTO user(mail, password, dateInscription) VALUES ('mail@mail.fr','aaa',CURDATE());
 
 
 

@@ -22,7 +22,7 @@ class SecurityController extends Controller
         if($this->isGranted('ROLE_USER') == true) {
             return $this->redirectToRoute('demande_index');
         } else if ($this->isGranted('ROLE_ADMIN')) {
-            return $this->redirectToRoute('vehicule_index');
+            return $this->redirectToRoute('booking_calendar');
         }
 
         // get the login error if there is one
