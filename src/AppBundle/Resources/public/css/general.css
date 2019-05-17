@@ -1,30 +1,3 @@
-.card a{
-  color:#777 !important;
-  cursor: pointer !important;
-}
-.card a:hover{
-  text-decoration: underline !important;
-}
-
-.labeldate>label{
-  color: #39B76C;
-  min-width: 77px;
-}
-.labeldate{
-  display: block;
-}
-.ville{
-  font-weight:700;
-  text-transform: uppercase;
-}
-.clearHeader{
-  padding-top: 5%;
-}
-
-.affichageMobile {
-  display: none;
-}
-
 @media screen and (max-width: 800px) {
   .affichageMobile {
     display: block;

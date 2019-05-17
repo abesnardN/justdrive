@@ -23,3 +23,6 @@ INSERT INTO user(mail, password, dateInscription) VALUES ('mail@mail.fr','aaa',C
 
 INSERT INTO trajet(fkUser, adresseDepart, addresseArrive, fkVehicule, dateDepart, dateArrive, kilometrage, commentaireConducteur, commentaireInterne, pointRDVDepart, pointRDVArrive, fkEtat)
 VALUES (1,1,4,2,CURDATE(),CURDATE(),'10000','il me faut une camionnette pour le materiel','Ok',null,null,1);
+
+
+insert into occupant (fkTrajet,fkUser,FkEtat) values(5,2,1);

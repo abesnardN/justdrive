@@ -5,6 +5,7 @@
 
 
 {% block body %}
+<div class="container">
     <h1>Mes demandes</h1>
 
 <div class="row">
@@ -30,7 +31,14 @@
         <div><a onclick="affiche()">Plus ...</a></div>
       </div>
     </div>
-    <div class="d-none">
+    <div id="divoccupant" class="d-none">
+   <div>
+  Les occupants
+  <ul>
+    <li>Michel Dupond</li>
+    <li>Michel Dupond</li>
+  </ul>
+    </div>
     <a onclick="masque()">Masquer</a>
     </div>
   </div>
@@ -39,6 +47,7 @@
 
 
 {% endfor %}
+</div>
 </div>
 
 {% endblock %}
