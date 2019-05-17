@@ -34,10 +34,10 @@
        <div class="ville">{{uneDemande.adressearrive.ville}}</div>
         {{uneDemande.fkuser.nom}}
         {{uneDemande.fkuser.prenom}}
-        <div><a onclick="affiche()">Plus ...</a></div>
+        <div><a onclick="affiche({{uneDemande.idTrajet}})">Plus ...</a></div>
       </div>
     </div>
-    <div id="divoccupant" class="d-none">
+    <div id="divoccupant-{{uneDemande.idTrajet}}" class="d-none">
    <div>
   Les occupants
   <ul>
@@ -47,7 +47,7 @@
 
   </ul>
     </div>
-    <a onclick="masque()">Masquer</a>
+    <a onclick="masque({{uneDemande.idTrajet}})">Masquer</a>
     </div>
   </div>
 </div>

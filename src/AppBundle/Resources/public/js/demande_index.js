@@ -1,8 +1,9 @@
-function affiche(){
-  $('#divoccupant').removeClass('d-none');
+function affiche(id){
+  $('#divoccupant-'+id).removeClass('d-none');
+
 }
-function masque(){
-  $('#divoccupant').addClass('d-none');
+function masque(id){
+  $('#divoccupant-'+id).addClass('d-none');
 
 }
 // A $( document ).ready() block.
