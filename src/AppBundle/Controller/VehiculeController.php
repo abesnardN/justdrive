@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 /**
  * @Route("/vehicule")
  */
@@ -56,7 +57,7 @@ class VehiculeController extends Controller
      */
     public function show(Vehicule $vehicule): Response
     {
-        return $this->render('@App\vehicule/show.html.twig', [
+        return $this->render('@App/vehicule/show.html.twig', [
             'vehicule' => $vehicule,
         ]);
     }
