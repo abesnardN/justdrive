@@ -35,7 +35,7 @@ class TrajetType extends AbstractType
                 'label'=>'Adresse de départ',
                 'attr' => ['class' => 'form-control']
             ])
-            ->add('addressearrive', EntityType::class, [
+            ->add('adressearrive', EntityType::class, [
                 // looks for choices from this entity
                 'class' => Adresse::class,
                 // uses the User.username property as the visible option string
