@@ -6,7 +6,3 @@ function masque(id){
   $('#divoccupant-'+id).addClass('d-none');
 
 }
-// A $( document ).ready() block.
-$( document ).ready(function() {
-    console.log( "ready!" );
-});
