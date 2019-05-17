@@ -15,6 +15,8 @@ use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+
 Use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
 class TrajetType extends AbstractType
@@ -53,8 +55,10 @@ class TrajetType extends AbstractType
                 'label'=>'Véhicule',
                 'attr' => ['class' => 'form-control']
             ])
-            ->add('datedepart')
-            ->add('datearrive')
+            ->add('datedepart',DateType::class,['widget'=>'single_text',
+                                                'attr'=>['type'=>'date']])
+            ->add('datearrive',DateType::class,['widget'=>'single_text',
+                                                'attr'=>['type'=>'date']])
             ->add('kilometrage',TextType::class,['attr' => ['class' => 'form-control']])
             ->add('commentaireconducteur',TextareaType::class, ['required'   => false])
             ->add('commentaireinterne',TextareaType::class, ['required'   => false])
