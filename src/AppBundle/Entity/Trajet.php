@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Trajet
  *
  * @ORM\Table(name="trajet", indexes={@ORM\Index(name="fk_trajet_rdvarrive", columns={"pointRDVArrive"}), @ORM\Index(name="fk_trajet_depart", columns={"adresseDepart"}), @ORM\Index(name="fk_trajet_vehicule", columns={"fkVehicule"}), @ORM\Index(name="fk_trajet_rdvdepart", columns={"pointRDVDepart"}), @ORM\Index(name="fk_trajet_etat", columns={"fkEtat"}), @ORM\Index(name="fk_trajet_conducteur", columns={"fkUser"}), @ORM\Index(name="fk_trajet_arrive", columns={"addresseArrive"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TicketRepository")
  */
 class Trajet
 {

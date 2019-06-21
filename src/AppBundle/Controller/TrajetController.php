@@ -35,12 +35,14 @@ class TrajetController extends Controller
 $demandes = [];
 
       //si une recherche a été lancée
-      if (null !== ($_GET['date'])) {
+      if (null !== ($request->query->get('date'))) {
         //TODO
         //on recupere les trajets correspondants et non plein
         $demandes = $this->getDoctrine()
             ->getRepository(Trajet::class)
-            ->findAll();
+            ->search($request->query->get('date'),
+                      $request->query->get('adressedepart'),
+                      $request->query->get('adressearrive'));
 
 
       }
