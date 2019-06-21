@@ -37,7 +37,7 @@
   <div>Adresse de départ : {{uneDemande.adressedepart.numrue}}  {{uneDemande.adressedepart.nomrue}} {{uneDemande.adressedepart.ville}}</div>
   <div>Adresse d'arriver : {{uneDemande.adressearrive.numrue}}  {{uneDemande.adressearrive.nomrue}} {{uneDemande.adressearrive.ville}}</div>
   <div>Conduit par : {{uneDemande.fkuser.prenom}} {{uneDemande.fkuser.nom}}</div>
-  <div>x places restantes</div>
+  <div>{{uneDemande.placesRestant}} places restantes</div>
     <button type="button" class="btn btn-info" name="button">M'inscrire</button>
   </div>
   {% endfor %}

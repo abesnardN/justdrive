@@ -122,7 +122,8 @@ class Trajet
     */
     private $occupant;
 
-
+    //données calculé
+    private $placesRestant;
 
     public function getIdtrajet(): ?int
     {
@@ -275,6 +276,10 @@ class Trajet
     public function getOccupant(): ?Collection
     {
         return $this->occupant;
+    }
+    public function getPlacesRestant(): int
+    {
+        return $this->fkvehicule->getNbplace() - sizeof($this->occupant) -1;//-1 pour le conducteur
     }
 
 
