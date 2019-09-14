@@ -1,0 +1,7 @@
+.divBoutonsMonCompte {
+    flex-direction: column-reverse;
+}
+
+.divBoutonsMonCompte button:first {
+    margin-bottom: 5%;
+}

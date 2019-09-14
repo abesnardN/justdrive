@@ -14,4 +14,30 @@
   .affichagePc {
     display: none;
   }
+
+  #btnProfil {
+    width: 170%;
+  }
+  
+  .listeInlineMobile {
+    display: inline-block;
+  }
+
+  .clearHeader {
+    padding-top: 20%;
+  }
+  
+  .liMobileUser {
+    margin-left: 22%;
+  }
+
+  .liMobileAdmin {
+    margin-left: 11.5%;
+    margin-right: 0 !important;
+  }
+
+  .supprimeFlexMobile {
+    display: block !important;
+  }
+
 }

@@ -16,6 +16,10 @@
         <div class="clearHeader"></div>
 
         {% block body %}{% endblock %}
+
+        <footer class="affichageMobile border-bottom-0 fixed-bottom rounded-bottom border-bottom align-bottom">
+            {% include "bot_menu.html.twig" %} 
+        </footer>
         {% include 'js.html.twig' %}
         {% block javascripts %}
         {% endblock %}
