@@ -4,6 +4,7 @@
 
 {% block body %}
 <div class="container">
+<div id="formulaireSearch">
 <form name="form">
   <div class="form-group row">
     <label for="inputdate" class="col-sm-2 col-form-label">Date</label>
@@ -46,6 +47,12 @@
 
 </div>
 
-<button type="button" class="btn btn-success btn-lg btn-block" name="button">Creer un nouveau trajet</button>
-</div>
+<button type="button" id="btnAddTrajet" class="btn btn-success btn-lg btn-block" name="button">Creer un nouveau trajet</button>
+</div><!-- end div id = formulaireSearch -->
+
+  <div id="formulaireAdd" class="d-none">
+
+  </div><!-- end div id = formulaireAdd -->
+
+</div><!-- end div container -->
 {% endblock %}
