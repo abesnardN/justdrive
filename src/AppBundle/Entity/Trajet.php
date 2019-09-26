@@ -101,12 +101,12 @@ class Trajet
     private $pointrdvarrive;
 
     /**
-     * @var int|null
+     * @var Etatvehicule|null
      *
-     * @ORM\Column(name="fkEtat", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Etatvehicule", inversedBy="trajets", cascade="persist")
+     * @ORM\JoinColumn(name="fkEtat", referencedColumnName="idEtat")
      */
     private $fketat;
-
 
 
     /**
@@ -125,6 +125,11 @@ class Trajet
     //données calculé
     private $placesRestant;
 
+    public function setIdtrajet(?int $id): self
+    {
+        $this->idtrajet = $id;
+        return $this;
+    }
     public function getIdtrajet(): ?int
     {
         return $this->idtrajet;

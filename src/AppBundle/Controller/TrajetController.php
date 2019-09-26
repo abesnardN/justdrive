@@ -70,12 +70,12 @@ $demandes = [];
             $entityManager = $this->getDoctrine()->getManager();
             $trajet->setFkuser($this->get('security.token_storage')->getToken()->getUser());
 
+$trajet->setPointrdvarrive(null);
+$trajet->setPointrdvdepart(null);
 
-dump($trajet);
             $entityManager->persist($trajet);
             $entityManager->flush();
-
-            return $this->redirectToRoute('trajet_index');
+            return $this->redirectToRoute('demande_index');
         }
 
         return $this->render('@App\trajet/new.html.twig', [

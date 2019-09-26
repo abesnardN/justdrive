@@ -28,6 +28,12 @@ class Etatvehicule
      */
     private $libelle;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Trajet", mappedBy="fketat")
+     */
+    private $trajets;
+
+
     public function getIdetat(): ?int
     {
         return $this->idetat;
