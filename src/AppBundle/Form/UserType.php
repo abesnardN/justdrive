@@ -38,7 +38,7 @@ class UserType extends AbstractType
                     'id' => 'prenom'
                 ]])
             ->add('permis', DateType::class, [
-                'label' => "Date d'optention du permis de conduire",
+                'label' => "Date d'obtention du permis de conduire",
                 'required' => false,
                 'widget' => 'single_text',
                 'attr' => [

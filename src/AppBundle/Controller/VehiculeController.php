@@ -35,7 +35,7 @@ class VehiculeController extends Controller
     public function new(Request $request): Response
     {
         $vehicule = new Vehicule();
-        $form = $this->createForm(VehiculeType::class, $vehicule);
+        $form = $this->createForm(VehiculeType::class, $vehicule, ['isCreate' => true]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
