@@ -1,45 +1,37 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Vehicule index{% endblock %}
+{% block title %}Nos véhicules{% endblock %}
 
 {% block body %}
-    <h1>Vehicule index</h1>
-
-    <table class="table table-hover table-striped table-bordered">
-        <thead class="thead-dark">
-            <tr>
-                <th>Idvehicule</th>
-                <th>Modele</th>
-                <th>Kilometrage</th>
-                <th>Marque</th>
-                <th>Nbplace</th>
-                <th>Immatriculation</th>
-                <th>Datepremierecirculation</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+<div class="container">
+    <h1>Nos véhicules</h1>
+    <div class="clearfix" style="width:100%;">
+        <a href="{{ path('vehicule_new') }}" class="float-right btn btn-success mr-5 mb-3">Ajouter un nouveau véhicule</a>
+    </div>
+    <div class="row ml-5">
         {% for vehicule in vehicules %}
-            <tr>
-                <td>{{ vehicule.idvehicule }}</td>
-                <td>{{ vehicule.modele }}</td>
-                <td>{{ vehicule.kilometrage }}</td>
-                <td>{{ vehicule.marque }}</td>
-                <td>{{ vehicule.nbplace }}</td>
-                <td>{{ vehicule.immatriculation }}</td>
-                <td>{{ vehicule.datepremierecirculation ? vehicule.datepremierecirculation|date('Y-m-d') : '' }}</td>
-                <td>
-                    <a href="{{ path('vehicule_show', {'idvehicule': vehicule.idvehicule}) }}">show</a>
-                    <a href="{{ path('vehicule_edit', {'idvehicule': vehicule.idvehicule}) }}">edit</a>
-                </td>
-            </tr>
+        <div class="card col-sm-3 col-md-3 col-lg-3 col-xs-3 m-1 text-center cardVehicule">
+            <a href="{{ path('vehicule_show', {'idvehicule': vehicule.idvehicule}) }}">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md">
+                        <div class="numVehicule">Véhicule n° {{ vehicule.idvehicule }}</div>
+                        <div>{{ vehicule.modele }} - {{ vehicule.marque }}</div>
+                        <div>Immatriculation : {{ vehicule.immatriculation }}</div>
+                    </div>
+                  </div>
+                </div>
+            </a>
+              </div>
         {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
+            <div class="col-md align-content-center text-md-center m-5">
+                <div class="alert alert-info">Aucun véhicule n'est enregistré.</div>
+            </div>
         {% endfor %}
-        </tbody>
-    </table>
+        
+    </div>
 
-    <a href="{{ path('vehicule_new') }}">Create new</a>
+</div>
+
+    
 {% endblock %}
