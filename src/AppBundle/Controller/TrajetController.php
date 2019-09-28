@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @Route("/trajet")
@@ -82,6 +83,30 @@ $trajet->setPointrdvdepart(null);
             'trajet' => $trajet,
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/inscrire", name="trajet_inscrire", methods={"GET","POST"})
+     */
+    public function inscrire(Request $request): Response
+    {
+      $idTrajet = $request->request->get('idTrajet');
+
+      $userConnected = $this->get('security.token_storage')->getToken()->getUser();
+      $trajet = $this->getDoctrine()
+          ->getRepository(Trajet::class)
+          ->find($idTrajet);
+
+      $arrayOcc = $trajet->getOccupant()->toArray();
+      //add
+      $arrayOcc[] = $userConnected;
+      $trajet->setOccupant(new ArrayCollection($arrayOcc));
+
+            $entityManager = $this->getDoctrine()->getManager();
+
+            $entityManager->persist($trajet);
+            $entityManager->flush();
+            return new Response();
     }
 
     /**

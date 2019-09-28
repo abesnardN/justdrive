@@ -282,6 +282,11 @@ class Trajet
     {
         return $this->occupant;
     }
+    public function setOccupant(?Collection $occ): self
+    {
+        $this->occupant = $occ;
+        return $this;
+    }
     public function getPlacesRestant(): int
     {
         return $this->fkvehicule->getNbplace() - sizeof($this->occupant) -1;//-1 pour le conducteur

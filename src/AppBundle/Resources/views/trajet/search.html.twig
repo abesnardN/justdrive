@@ -31,17 +31,36 @@
   {% if demandes|length == 0 %}
     <p>Pas de trajets correspondant à la recherche.</p>
   {% endif %}
-
+<table class="table table-borderer">
+    <tbody>
   {% for uneDemande in demandes %}
-  <div>
-  {{uneDemande.datedepart|date('h')}}h{{uneDemande.datedepart|date('i')}}
-  <div>Adresse de départ : {{uneDemande.adressedepart.numrue}}  {{uneDemande.adressedepart.nomrue}} {{uneDemande.adressedepart.ville}}</div>
-  <div>Adresse d'arriver : {{uneDemande.adressearrive.numrue}}  {{uneDemande.adressearrive.nomrue}} {{uneDemande.adressearrive.ville}}</div>
-  <div>Conduit par : {{uneDemande.fkuser.prenom}} {{uneDemande.fkuser.nom}}</div>
-  <div>{{uneDemande.placesRestant}} places restantes</div>
-    <button type="button" class="btn btn-info" name="button">M'inscrire</button>
-  </div>
+  <tr>
+    <td>
+      <span class="h2">{{uneDemande.datedepart|date('h')}}h{{uneDemande.datedepart|date('i')}}</span>
+      <p>{{uneDemande.placesRestant}} places restantes</p>
+    </td>
+  <td>
+    <p>
+      {{uneDemande.adressedepart.numrue}}  {{uneDemande.adressedepart.nomrue}} {{uneDemande.adressedepart.ville}}
+    </p>
+    <p>
+      {{uneDemande.adressearrive.numrue}}  {{uneDemande.adressearrive.nomrue}} {{uneDemande.adressearrive.ville}}
+    </p>
+  </td>
+  <td>
+    <p><span class="font-weight-bold">{{uneDemande.fkuser.prenom}} {{uneDemande.fkuser.nom}}</p>
+  {% for unOccupant in uneDemande.occupant %}
+    <li>{{unOccupant.prenom}} {{unOccupant.nom}}</li>
   {% endfor %}
+  </td>
+  <td>
+    <button type="button" class="btn btn-info" name="button" onclick="inscrire('{{uneDemande.idtrajet}}','{{uneDemande.placesRestant}}')">M'inscrire</button>
+  </td>
+  </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
 
 
 
