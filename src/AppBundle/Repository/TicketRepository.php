@@ -27,4 +27,17 @@ class TicketRepository extends ServiceEntityRepository
                       ->getQuery()
                       ->getResult();
     }
+    public function findMyDemande($idUser){
+      $date=new \DateTime('now');
+
+      return  $this->createQueryBuilder('t')
+                      ->innerJoin('t.adressedepart','depart')
+                      ->innerJoin('t.adressearrive','arrive')
+                      ->where("t.fkuser = :user")
+                      ->andWhere("t.datedepart > :date")
+                      ->setParameter('user', $idUser)
+                      ->setParameter('date', $date)
+                      ->getQuery()
+                      ->getResult();
+    }
 }

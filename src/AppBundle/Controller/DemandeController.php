@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Trajet;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\DateTime;
 /**
  * @Route("/mesDemandes")
  */
@@ -15,11 +16,11 @@ class DemandeController extends AbstractController
      */
     public function list()
     {
-      $demandes = $this->getDoctrine()
-          ->getRepository(Trajet::class)
-          ->findAll();
-// dump($demandes);
-//  die();
+      $idUser = $this->get('security.token_storage')->getToken()->getUser()->getIduser();
+          $demandes = $this->getDoctrine()
+              ->getRepository(Trajet::class)
+              ->findMyDemande($idUser);
+
         return $this->render('@App\mesDemandes.html.twig', [
             'demandes' => $demandes,
         ]);
