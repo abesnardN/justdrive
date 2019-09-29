@@ -7,19 +7,15 @@
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ booking.id }}</td>
+                <td>{{ booking.idtrajet }}</td>
             </tr>
             <tr>
                 <th>Beginat</th>
-                <td>{% if booking.beginAt %}{{ booking.beginAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if booking.datedepart %}{{ booking.datedepart|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Endat</th>
-                <td>{% if booking.endAt %}{{ booking.endAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ booking.title }}</td>
+                <td>{% if booking.datearrive %}{{ booking.datearrive|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>

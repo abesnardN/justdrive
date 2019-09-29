@@ -108,12 +108,7 @@ class Trajet
      */
     private $fketat;
 
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="etat", type="string", nullable=true)
-     */
-    private $etatTrajet;
+
 
     /**
     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\User", inversedBy="trajetOccupant", cascade={"persist"})
@@ -284,16 +279,7 @@ class Trajet
 
         return $this;
     }
-    public function setEtatTrajet(?string $etat): self
-    {
-        $this->etatTrajet = $etat;
 
-        return $this;
-    }
-    public function getEtatTrajet(): ?string
-    {
-        return $this->etatTrajet = $etat;
-    }
     public function getOccupant(): ?Collection
     {
         return $this->occupant;

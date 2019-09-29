@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Booking;
+use AppBundle\Entity\Trajet;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -25,7 +25,7 @@ class BookingController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $bookings = $em->getRepository('AppBundle:Booking')->findAll();
+        $bookings = $em->getRepository('AppBundle:Trajet')->findAll();
 
         return $this->render('@App/booking/index.html.twig', array(
             'bookings' => $bookings,
@@ -38,7 +38,7 @@ class BookingController extends Controller
      * @Route("/show/{id}", name="booking_show")
      * @Method("GET")
      */
-    public function showAction(Booking $booking)
+    public function showAction(Trajet $booking)
     {
 
         return $this->render('@App/booking/show.html.twig', array(
