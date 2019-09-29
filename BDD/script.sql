@@ -136,3 +136,5 @@ CREATE TABLE planning(
 );
 ALTER TABLE planning ADD CONSTRAINT `fk_planning_vehicule`
 	FOREIGN KEY (`fkVehicule`) REFERENCES `vehicule`(`idVehicule`);
+
+alter table trajet add column etat varchar(30) null;

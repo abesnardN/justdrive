@@ -154,4 +154,26 @@ $trajet->setPointrdvdepart(null);
 
         return $this->redirectToRoute('trajet_index');
     }
+
+    /**
+     * @Route("/valideDemande/{id}", name="trajet_valid")
+     */
+    public function valid($id)
+    {
+      //recupere le trajet
+      $trajet = $this->getDoctrine()
+          ->getRepository(Trajet::class)
+          ->find($id);
+      //valide le trajet
+      $trajet->setEtatTrajet('valide');
+
+      //enregistre
+      $entityManager = $this->getDoctrine()->getManager();
+      $entityManager->persist($trajet);
+      $entityManager->flush();
+      return new Response();
+
+
+
+    }
 }
