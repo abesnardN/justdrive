@@ -31,12 +31,13 @@ class TicketRepository extends ServiceEntityRepository
       $date=new \DateTime('now');
 
       return  $this->createQueryBuilder('t')
-                      ->innerJoin('t.adressedepart','depart')
-                      ->innerJoin('t.adressearrive','arrive')
+                      ->innerJoin('t.occupant','occupant')
                       ->where("t.fkuser = :user")
                       ->andWhere("t.datedepart > :date")
+                      ->orWhere("occupant = :occ")
                       ->setParameter('user', $idUser)
                       ->setParameter('date', $date)
+                      ->setParameter('occ', $idUser)
                       ->getQuery()
                       ->getResult();
     }
