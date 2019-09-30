@@ -73,6 +73,12 @@ $demandes = [];
 
 $trajet->setPointrdvarrive(null);
 $trajet->setPointrdvdepart(null);
+$userConnected = $this->get('security.token_storage')->getToken()->getUser();
+
+$trajet->setOccupant(new ArrayCollection([$userConnected]));
+
+
+
 
             $entityManager->persist($trajet);
             $entityManager->flush();
