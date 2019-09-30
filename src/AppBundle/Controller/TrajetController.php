@@ -176,4 +176,25 @@ $trajet->setPointrdvdepart(null);
 
 
     }
+    /**
+     * @Route("/annuleDemande/{id}", name="trajet_annule")
+     */
+    public function annule($id)
+    {
+      //recupere le trajet
+      $trajet = $this->getDoctrine()
+          ->getRepository(Trajet::class)
+          ->find($id);
+      //annule le trajet
+      $trajet->setEtatTrajet('annule');
+
+      //enregistre
+      $entityManager = $this->getDoctrine()->getManager();
+      $entityManager->persist($trajet);
+      $entityManager->flush();
+      return new Response();
+
+
+
+    }
 }
