@@ -10,7 +10,13 @@
 
         <tr>
             <th>Conducteur</th>
-            <td>{{ booking.fkuser.getNom() }}</td>
+            <td>{{ booking.fkuser.getPrenom() }} {{ booking.fkuser.getNom() }}</td>
+        </tr>
+        <tr>
+        <th>Occupants</th>
+            {% for unOccupant in booking.occupant %}
+                <td>{{unOccupant.prenom}} {{unOccupant.nom}}</td>
+            {% endfor %}
         </tr>
         <tr>
             <th>Adresse départ</th>
