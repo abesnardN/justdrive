@@ -19,6 +19,16 @@
 
 <div class="card col-sm-12 col-md-12 col-lg-12 col-xs-12">
   <div class="card-body">
+    {% set etatDemande = uneDemande.getEtatTrajet() %}
+    {% set etatDemandeLibelle = uneDemande.getEtatTrajet() %}
+    {% if etatDemande == null %}
+      {% set etatDemande = 'encour' %}
+      {% set etatDemandeLibelle = 'en cours' %}
+    {% endif %}
+    <h3 class="{{etatDemande}}">
+      {{ etatDemandeLibelle|capitalize }}
+    </h3>
+
   <div class="labeldate"><label>Aller : </label>{{uneDemande.datedepart|date("d/m")}}</div>
   <div class="labeldate"><label>Retour : </label>{{uneDemande.datearrive|date("d/m")}}</div>
     <div>

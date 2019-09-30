@@ -5,7 +5,15 @@
 .card a:hover{
   text-decoration: underline !important;
 }
-
+.valide{
+  color: #39B76C;
+}
+.refuse{
+  color: orange;
+}
+.encour{
+  color: lightblue;  
+}
 .labeldate>label{
   color: #39B76C;
   min-width: 77px;
