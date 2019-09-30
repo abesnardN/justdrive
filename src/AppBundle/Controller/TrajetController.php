@@ -183,16 +183,16 @@ $trajet->setOccupant(new ArrayCollection([$userConnected]));
 
     }
     /**
-     * @Route("/annuleDemande/{id}", name="trajet_annule")
+     * @Route("/refuseDemande/{id}", name="trajet_refuse")
      */
-    public function annule($id)
+    public function refuse($id)
     {
       //recupere le trajet
       $trajet = $this->getDoctrine()
           ->getRepository(Trajet::class)
           ->find($id);
-      //annule le trajet
-      $trajet->setEtatTrajet('annule');
+      //refuse le trajet
+      $trajet->setEtatTrajet('refuse');
 
       //enregistre
       $entityManager = $this->getDoctrine()->getManager();
