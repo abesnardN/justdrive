@@ -3,6 +3,7 @@
 namespace AppBundle\EventListener;
 
 use AppBundle\Entity\Booking;
+use AppBundle\Entity\Trajet;
 use AppBundle\Repository\BookingRepository;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Toiba\FullCalendarBundle\Entity\Event;
@@ -52,8 +53,22 @@ class FullCalendarListener
              * and : https://fullcalendar.io/docs/event-object
              */
             // $bookingEvent->setUrl('http://www.google.com');
-            // $bookingEvent->setBackgroundColor($booking->getColor());
-            // $bookingEvent->setCustomField('borderColor', $booking->getColor());
+
+           // /** @var Trajet $booking */
+            if($booking->getEtatTrajet() == 'valide'){
+
+                $bookingEvent->setBackgroundColor('green');
+                $bookingEvent->setCustomField('borderColor', 'green');
+
+            }elseif ($booking->getEtatTrajet() == 'refuse'){
+                $bookingEvent->setBackgroundColor('orange');
+                $bookingEvent->setCustomField('borderColor', 'orange');
+            }else{
+                $bookingEvent->setBackgroundColor('light blue');
+                $bookingEvent->setCustomField('borderColor', 'light blue');
+            }
+
+
 
             $bookingEvent->setUrl(
                 $this->router->generate('booking_show', [

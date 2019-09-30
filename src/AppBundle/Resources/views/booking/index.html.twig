@@ -14,13 +14,13 @@
         <tbody>
         {% for booking in bookings %}
             <tr>
-                <td><a href="{{ path('booking_show', { 'id': booking.idtrajet }) }}">{{ booking.idtrajet }}</a></td>
+                <td><a href="{{ path('trajet_show', { 'id': booking.idtrajet }) }}">{{ booking.idtrajet }}</a></td>
                 <td>{% if booking.datedepart %}{{ booking.datedepart|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if booking.datearrive %}{{ booking.datearrive|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('booking_show', { 'id': booking.idtrajet }) }}">show</a>
+                            <a href="{{ path('trajet_show', { 'id': booking.idtrajet }) }}">show</a>
                         </li>
                     </ul>
                 </td>

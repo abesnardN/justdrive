@@ -1,28 +1,52 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Booking</h1>
+{% block title %}Trajet{% endblock %}
 
-    <table>
+{% block body %}
+    <h1>Trajet</h1>
+
+    <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ booking.idtrajet }}</td>
-            </tr>
-            <tr>
-                <th>Beginat</th>
-                <td>{% if booking.datedepart %}{{ booking.datedepart|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Endat</th>
-                <td>{% if booking.datearrive %}{{ booking.datearrive|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
+
+        <tr>
+            <th>Conducteur</th>
+            <td>{{ booking.fkuser.getNom() }}</td>
+        </tr>
+        <tr>
+            <th>Adresse départ</th>
+            <td>{{ booking.adressedepart.getNumrue() }} {{ booking.adressedepart.getNomrue() }} {{ booking.adressedepart.getVille() }}</td>
+        </tr>
+        <tr>
+            <th>Adresse arrivé</th>
+            <td>{{ booking.adressearrive.getNumrue() }} {{ booking.adressearrive.getNomrue() }} {{ booking.adressearrive.getVille() }}</td>
+        </tr>
+        <tr>
+            <th>Véhicule</th>
+            <td>{{ booking.fkvehicule.getModele() }}</td>
+        </tr>
+        <tr>
+            <th>Date départ</th>
+            <td>{{ booking.datedepart ? booking.datedepart|date('Y-m-d H:i:s') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Date arrivé</th>
+            <td>{{ booking.datearrive ? booking.datearrive|date('Y-m-d H:i:s') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Kilometrage</th>
+            <td>{{ booking.kilometrage }}</td>
+        </tr>
+        <tr>
+            <th>Commentaire conducteur</th>
+            <td>{{ booking.commentaireconducteur }}</td>
+        </tr>
+        <tr>
+            <th>Commentaire interne</th>
+            <td>{{ booking.commentaireinterne }}</td>
+        </tr>
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('booking_calendar') }}">Back to the list</a>
-        </li>
-    </ul>
+    <a href="{{ path('booking_calendar') }}">Retour au calendrier</a>
+
 {% endblock %}

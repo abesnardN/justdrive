@@ -292,7 +292,7 @@ class Trajet
     }
     public function getEtatTrajet(): ?string
     {
-        return $this->etatTrajet = $etat;
+        return $this->etatTrajet;
     }
     public function getOccupant(): ?Collection
     {

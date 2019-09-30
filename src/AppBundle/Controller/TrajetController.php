@@ -120,7 +120,7 @@ $trajet->setOccupant(new ArrayCollection([$userConnected]));
      */
     public function show(Trajet $trajet): Response
     {
-        return $this->render('trajet/show.html.twig', [
+        return $this->render('@App\trajet/show.html.twig', [
             'trajet' => $trajet,
         ]);
     }
