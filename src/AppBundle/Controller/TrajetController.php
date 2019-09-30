@@ -177,7 +177,7 @@ $trajet->setOccupant(new ArrayCollection([$userConnected]));
       $entityManager = $this->getDoctrine()->getManager();
       $entityManager->persist($trajet);
       $entityManager->flush();
-      return new Response();
+      return $this->redirectToRoute('booking_calendar');
 
 
 
@@ -198,8 +198,7 @@ $trajet->setOccupant(new ArrayCollection([$userConnected]));
       $entityManager = $this->getDoctrine()->getManager();
       $entityManager->persist($trajet);
       $entityManager->flush();
-      return new Response();
-
+      return $this->redirectToRoute('booking_calendar');
 
 
     }
