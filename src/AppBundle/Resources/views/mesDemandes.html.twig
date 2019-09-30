@@ -23,10 +23,16 @@
     {% set etatDemandeLibelle = uneDemande.getEtatTrajet() %}
     {% if etatDemande == null %}
       {% set etatDemande = 'encour' %}
-      {% set etatDemandeLibelle = 'en cours' %}
+      {% set etatDemandeLibelle = 'En attente de validation' %}
+    {% endif %}
+    {% if etatDemande == 'refuse' %}
+      {% set etatDemandeLibelle = 'Refusé' %}
+    {% endif %}
+    {% if etatDemande == 'valide' %}
+      {% set etatDemandeLibelle = 'Validé' %}
     {% endif %}
     <h3 class="{{etatDemande}}">
-      {{ etatDemandeLibelle|capitalize }}
+      {{ etatDemandeLibelle }}
     </h3>
 
   <div class="labeldate"><label>Aller : </label>{{uneDemande.datedepart|date("d/m")}}</div>
