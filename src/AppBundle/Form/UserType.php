@@ -68,6 +68,13 @@ class UserType extends AbstractType
                     'id' => 'tel',
                     'type' => 'tel'
                 ]])
+            ->add('password', PasswordType::class, [
+                'label' => 'Mot de passe',
+                'attr' => [
+                    'class' => 'form-control',
+                    'id' => 'password',
+                    'type' => 'password'
+                ]])
         ;
 
         if($options['isCreate'] == true) {
