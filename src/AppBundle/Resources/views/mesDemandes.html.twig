@@ -26,10 +26,10 @@
       {% set etatDemandeLibelle = 'En attente de validation' %}
     {% endif %}
     {% if etatDemande == 'refuse' %}
-      {% set etatDemandeLibelle = 'Refusé' %}
+      {% set etatDemandeLibelle = 'Demande refusée' %}
     {% endif %}
     {% if etatDemande == 'valide' %}
-      {% set etatDemandeLibelle = 'Validé' %}
+      {% set etatDemandeLibelle = 'Demande validée' %}
     {% endif %}
     <h3 class="{{etatDemande}}">
       {{ etatDemandeLibelle }}
