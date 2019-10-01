@@ -61,11 +61,11 @@ class FullCalendarListener
                 $bookingEvent->setCustomField('borderColor', 'green');
 
             }elseif ($booking->getEtatTrajet() == 'refuse'){
+                $bookingEvent->setBackgroundColor('red');
+                $bookingEvent->setCustomField('borderColor', 'red');
+            }else{
                 $bookingEvent->setBackgroundColor('orange');
                 $bookingEvent->setCustomField('borderColor', 'orange');
-            }else{
-                $bookingEvent->setBackgroundColor('light blue');
-                $bookingEvent->setCustomField('borderColor', 'light blue');
             }
 
 
