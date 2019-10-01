@@ -34,7 +34,7 @@ class TicketRepository extends ServiceEntityRepository
       return  $this->createQueryBuilder('t')
                       ->innerJoin('t.occupant','occupant')
                       ->where("t.datedepart > :date")
-                      ->orWhere("occupant = :occ")
+                      ->andWhere("occupant.iduser = :occ")
                       ->setParameter('date', $date)
                       ->setParameter('occ', $idUser)
                       ->getQuery()
