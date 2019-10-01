@@ -305,7 +305,7 @@ class Trajet
     }
     public function getPlacesRestant(): int
     {
-        return $this->fkvehicule->getNbplace() - sizeof($this->occupant) -1;//-1 pour le conducteur
+        return $this->fkvehicule->getNbplace() - sizeof($this->occupant);
     }
 
 
