@@ -56,12 +56,22 @@ class TrajetType extends AbstractType
                 'attr' => ['class' => 'form-control']
             ])
             ->add('datedepart',DateTimeType::class,['widget'=>'single_text',
-                                                'attr'=>['type'=>'date']])
+                                                    'label'=>'Date de départ',
+                                                'attr'=>['type'=>'date', 'class'=> 'form-control']])
             ->add('datearrive',DateTimeType::class,['widget'=>'single_text',
-                                                'attr'=>['type'=>'date']])
+                                                    'label'=>'Date d\'arrivée',
+                                                'attr'=>['type'=>'date', 'class'=> 'form-control']])
             ->add('kilometrage',TextType::class,['attr' => ['class' => 'form-control']])
-            ->add('commentaireconducteur',TextareaType::class, ['required'   => false])
-            ->add('commentaireinterne',TextareaType::class, ['required'   => false])
+            ->add('commentaireconducteur',TextareaType::class,
+                                      ['required'   => false,
+                                      "label"=>'Commentaire conducteur',
+                                      "attr"=>['class'=>'form-control']
+                                    ])
+            ->add('commentaireinterne',TextareaType::class,
+                                      ['required'   => false,
+                                      "label"=>'Commentaire interne',
+                                      "attr"=>['class'=>'form-control']
+                                    ])
 
             ->add('pointrdvdepart', EntityType::class, [
                 // looks for choices from this entity
