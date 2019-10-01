@@ -14,11 +14,11 @@ class TicketRepository extends ServiceEntityRepository
     }
 
     public function search($date, $depart, $arriver){
-
+      $date = $date.'%';
       return  $this->createQueryBuilder('t')
                       ->innerJoin('t.adressedepart','depart')
                       ->innerJoin('t.adressearrive','arrive')
-                      ->where("t.datedepart = :date")
+                      ->where("t.datedepart like :date")
                       ->andWhere("depart.ville = :depart")
                       ->andWhere("arrive.ville = :arrive")
                       ->andWhere("t.etatTrajet = 'valide'")
