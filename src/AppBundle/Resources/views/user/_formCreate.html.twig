@@ -23,6 +23,9 @@
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
+                        {{ form_row(form.password) }}
+                    </div>
+                    <div class="form-group">
                         <label for="permisOuiNon"> L'utilisateur a-t-il le permis ?</label>
                         <input id="permisOuiNon" type="checkbox" {{ user.permis is defined and user.permis is not empty ? 'checked=""checked' : '' }}>
                     </div>
