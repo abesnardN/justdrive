@@ -41,7 +41,7 @@ class FullCalendarListener
         foreach ($bookings as $booking) {
             // this create the events with your own entity (here booking entity) to populate calendar
             $bookingEvent = new Event(
-                $booking->getCommentaireconducteur(),
+                $booking->getFkuser()->getPrenom().' '.$booking->getFkuser()->getNom().' '.$booking->getFkvehicule()->getImmatriculation(),
                 $booking->getDatedepart(),
                 $booking->getDatearrive() // If the end date is null or not defined, a all day event is created.
             );
