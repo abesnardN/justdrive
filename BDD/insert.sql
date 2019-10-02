@@ -16,4 +16,4 @@ INSERT INTO adresse(idAdresse,numRue,nomRue,ville,codePostal,fkPays,latitude,lon
     -- VALUES('206','10000','Peugeot',4,'OU569PO',CURDATE(),1);
 
 
-INSERT INTO user(mail, password, dateInscription) VALUES ('admin@mail.fr','2019',CURDATE());
+INSERT INTO user(mail, password, dateInscription, admin) VALUES ('admin@mail.fr','2019',CURDATE(),1);
