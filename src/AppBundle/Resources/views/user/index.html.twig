@@ -3,45 +3,37 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
+    <div class="container">
+        <h1>Liste des utilisateurs</h1>
+        <div class="clearfix" style="width:100%;">
+            <a href="{{ path('user_new') }}" class="float-right btn btn-success mr-5 mb-3">Ajouter un nouvel utilisateur</a>
+        </div>
+        <div class="row ml-5">
+            {% for user in users %}
+            <div class="card col-sm-3 col-md-3 col-lg-3 col-xs-3 m-1 text-center cardVehicule">
+                <a href="{{ path('user_show', {'iduser': user.iduser}) }}">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md">
+                            <div>{{ user.prenom }} {{ user.nom }}</div>
+                            <div>{{ user.mail }}</div>
+                            <div>Date d'inscription : {{ user.dateinscription ? user.dateinscription|date('d-m-Y') : '' }}</div>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+                  </div>
+            {% else %}
+                <div class="col-md align-content-center text-md-center m-5">
+                    <div class="alert alert-info">Aucun utilisateur n'est enregistré.</div>
+                </div>
+            {% endfor %}
+            
+        </div>
+    
+    </div>
+    
+        
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Iduser</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Permis</th>
-                <th>Urlpermis</th>
-                <th>Dateinscription</th>
-                <th>Mail</th>
-                <th>Numtel</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td>{{ user.iduser }}</td>
-                <td>{{ user.nom }}</td>
-                <td>{{ user.prenom }}</td>
-                <td>{{ user.permis ? user.permis|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ user.urlpermis }}</td>
-                <td>{{ user.dateinscription ? user.dateinscription|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ user.mail }}</td>
-                <td>{{ user.numtel }}</td>
-                <td>
-                    <a href="{{ path('user_show', {'iduser': user.iduser}) }}">show</a>
-                    <a href="{{ path('user_edit', {'iduser': user.iduser}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('user_new') }}">Create new</a>
 {% endblock %}
