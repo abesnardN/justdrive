@@ -9,7 +9,7 @@ CREATE TABLE user(
 	nom VARCHAR(50),
 	prenom VARCHAR(50),
 	permis DATETIME,
-	urlPermis VARCHAR(50),
+	urlPermis VARCHAR(8000),
 	dateInscription DATETIME NOT NULL,
 	mail VARCHAR(50),
 	numTel VARCHAR(13),
