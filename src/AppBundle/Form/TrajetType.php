@@ -44,7 +44,7 @@ class TrajetType extends AbstractType
                 'choice_label' => function (Adresse $adresse) {
                     return $adresse->getNumrue() .' '.$adresse->getNomrue() . ' ' . $adresse->getVille().' '.$adresse->getfkPays();
                 },
-                'label'=>'Adresse d\'arrivé',
+                'label'=>'Adresse d\'arrivée',
                 'attr' => ['class' => 'form-control']
             ])
             ->add('fkvehicule', EntityType::class, [
@@ -59,7 +59,7 @@ class TrajetType extends AbstractType
                                                     'label'=>'Date de départ',
                                                 'attr'=>['type'=>'date', 'class'=> 'form-control']])
             ->add('datearrive',DateTimeType::class,['widget'=>'single_text',
-                                                    'label'=>'Date d\'arrivée',
+                                                    'label'=>'Date de retour',
                                                 'attr'=>['type'=>'date', 'class'=> 'form-control']])
             ->add('kilometrage',TextType::class,['attr' => ['class' => 'form-control']])
             ->add('commentaireconducteur',TextareaType::class,
@@ -90,7 +90,7 @@ class TrajetType extends AbstractType
                 'choice_label' => function (Adresse $adresse) {
                     return $adresse->getNumrue() .' '.$adresse->getNomrue() . ' ' . $adresse->getVille().' '.$adresse->getfkPays();
                 },
-                'label'=>'point RDV arrivé',
+                'label'=>'point RDV arrivée',
                 'attr' => ['class' => 'form-control']
             ])
             ->add('fketat', EntityType::class, [

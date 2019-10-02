@@ -81,6 +81,7 @@ class UserType extends AbstractType
             $builder->add('dateinscription', DateType::class, [
                 'label' => "Date d'inscription",
                 'widget' => 'single_text',
+                'data' => new \DateTime(),
                 'attr' => [
                     'class' => 'form-control',
                     'id' => 'datePermis',

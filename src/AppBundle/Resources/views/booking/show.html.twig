@@ -23,19 +23,19 @@
             <td>{{ booking.adressedepart.getNumrue() }} {{ booking.adressedepart.getNomrue() }} {{ booking.adressedepart.getVille() }}</td>
         </tr>
         <tr>
-            <th>Adresse arrivé</th>
+            <th>Adresse arrivée</th>
             <td>{{ booking.adressearrive.getNumrue() }} {{ booking.adressearrive.getNomrue() }} {{ booking.adressearrive.getVille() }}</td>
         </tr>
         <tr>
             <th>Véhicule</th>
-            <td>{{ booking.fkvehicule.getModele() }}</td>
+            <td>{{ booking.fkvehicule.getModele() }} {{ booking.fkvehicule.getImmatriculation() }}</td>
         </tr>
         <tr>
             <th>Date départ</th>
             <td>{{ booking.datedepart ? booking.datedepart|date('Y-m-d H:i:s') : '' }}</td>
         </tr>
         <tr>
-            <th>Date arrivé</th>
+            <th>Date arrivée</th>
             <td>{{ booking.datearrive ? booking.datearrive|date('Y-m-d H:i:s') : '' }}</td>
         </tr>
         <tr>
@@ -45,10 +45,6 @@
         <tr>
             <th>Commentaire conducteur</th>
             <td>{{ booking.commentaireconducteur }}</td>
-        </tr>
-        <tr>
-            <th>Commentaire interne</th>
-            <td>{{ booking.commentaireinterne }}</td>
         </tr>
         </tbody>
     </table>

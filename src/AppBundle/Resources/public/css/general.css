@@ -5,7 +5,9 @@
 .affichageMobile {
   display: none;
 }
-
+.sf-minitoolbar {
+  display: none;
+}
 @media screen and (max-width: 800px) {
   .affichageMobile {
     display: block;
