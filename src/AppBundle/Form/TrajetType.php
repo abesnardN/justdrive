@@ -59,7 +59,7 @@ class TrajetType extends AbstractType
                                                     'label'=>'Date de départ',
                                                 'attr'=>['type'=>'date', 'class'=> 'form-control']])
             ->add('datearrive',DateTimeType::class,['widget'=>'single_text',
-                                                    'label'=>'Date d\'arrivée',
+                                                    'label'=>'Date de retour',
                                                 'attr'=>['type'=>'date', 'class'=> 'form-control']])
             ->add('kilometrage',TextType::class,['attr' => ['class' => 'form-control']])
             ->add('commentaireconducteur',TextareaType::class,
