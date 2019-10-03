@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="09a1930f-bcff-4ac2-b76e-8c5d5616fc34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/public/css/general.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/public/css/general.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/user/_formUpdate.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/user/_formUpdate.html.twig" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/annotations/" />
@@ -59,15 +59,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/booking/show.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/trajet/search.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -81,11 +72,20 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/css/general.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/mesDemandes.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -151,7 +151,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>calendar</find>
       <find>fullcalendar_load_events</find>
       <find>$datedepart</find>
       <find>getId</find>
@@ -181,6 +180,7 @@
       <find>save</find>
       <find>supprimer mon profil</find>
       <find>Date d'arrivée</find>
+      <find>je n'a</find>
     </findStrings>
     <dirStrings>
       <dir>F:\wamp64\www\justdrive\vendor\toiba</dir>
@@ -228,6 +228,7 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Form/TrajetType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/css/booking_calendar.css" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/css/general.css" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/user/_formUpdate.html.twig" />
       </list>
     </option>
   </component>
@@ -570,6 +571,8 @@
       <workItem from="1569957577625" duration="969000" />
       <workItem from="1569999015000" duration="2481000" />
       <workItem from="1570007442117" duration="49000" />
+      <workItem from="1570024215921" duration="1136000" />
+      <workItem from="1570086787628" duration="16000" />
     </task>
     <task id="LOCAL-00001" summary="bootstrap css">
       <created>1554369235978</created>
@@ -662,16 +665,23 @@
       <option name="project" value="LOCAL" />
       <updated>1570001944436</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="MZJ - favicon justDrive">
+      <created>1570024232871</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1570024232871</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37108000" />
+    <option name="totallyTimeSpent" value="38260000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26285347" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2692802" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -683,7 +693,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.43607" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.43607" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4989339" weight="0.26760563" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5025707" side_tool="true" weight="0.32839838" />
       <window_info anchor="bottom" id="Messages" order="12" />
@@ -888,13 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/mesDemandes.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/user/connexion.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -976,6 +979,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/css/user_index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/css/general.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/js/booking_calendar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1014,13 +1027,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/css/user_index.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/css/general.css">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/mesDemandes.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+        <state relative-caret-position="100">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
         </state>
       </provider>
     </entry>
