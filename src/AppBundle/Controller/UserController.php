@@ -93,7 +93,7 @@ class UserController extends Controller
             $entityManager->remove($user);
             $entityManager->flush();
         }
-
-        return $this->redirectToRoute('logout');
+        $this->get('security.token_storage')->setToken(null);
+        return $this->redirectToRoute('connexion');
     }
 }
