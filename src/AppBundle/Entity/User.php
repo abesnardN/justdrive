@@ -82,11 +82,11 @@ class User implements UserInterface
     /**
      *
      *
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Trajet", mappedBy="fkuser")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Trajet", mappedBy="fkuser",cascade={"remove"})
      */
     private $trajets;
     /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Trajet", mappedBy="occupant")
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Trajet", mappedBy="occupant", cascade={"remove"}))
     */
     private $trajetOccupant;
 
